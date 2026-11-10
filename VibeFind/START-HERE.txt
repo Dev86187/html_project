@@ -1,0 +1,19 @@
+VIBEFIND — START HERE
+====================
+
+1. Extract VibeFind_Final.zip.
+2. Open the extracted VibeFind folder in Visual Studio Code.
+3. If you do not have Live Server, install the VS Code extension named "Live Server".
+4. Open index.html, right-click inside the editor, and choose "Open with Live Server".
+5. Use the website navigation to visit Explore, Delhi, Chandigarh Tricity, About and Contact.
+6. Open a venue card to see its dynamic Experience Detail page.
+7. Open tools/data-check.html through Live Server to run the 43 dataset checks.
+
+IMPORTANT
+- This is a static HTML/CSS/vanilla JavaScript website. No npm install or build command is needed.
+- The dataset contains 258 source records: 188 Delhi and 70 Chandigarh Tricity.
+- The Contact page prepares a message for copying. It does not send email or save submissions to a server.
+- Verified prices, opening hours, venue photos, ratings, reviews and booking links were not present in the research dataset, so the website does not invent them.
+- Google Fonts need an internet connection; the site has system-font fallbacks.
+
+Main pages: index.html, explore.html, delhi.html, chandigarh.html, experience.html, about.html, contact.html.
