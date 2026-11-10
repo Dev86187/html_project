@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VibeFind · Things to do in Delhi & Chandigarh Tricity</title>
+<meta name="description" content="Gaming zones, sports turfs, escape rooms, VR, pottery and more. 258 places to try across Delhi, Chandigarh, Mohali, Zirakpur and Panchkula.">
+<meta name="theme-color" content="#090B10">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/motion.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="page-home">
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__bg" data-depth="0.15"></div><div class="hero__grid"></div>
+  <div class="hero__copy">
+    <p class="eyebrow" data-intro style="--d:0"><span>Delhi &amp; Chandigarh Tricity · <b id="heroCount" style="font-weight:inherit">258</b> places</span></p>
+    <h1 class="hero__title display" id="hero-title" aria-label="Find your next vibe.">
+      <span class="ln" aria-hidden="true"><span style="--i:0">Find</span></span>
+      <span class="ln" aria-hidden="true"><span class="out" style="--i:1">your next</span></span>
+      <span class="ln" aria-hidden="true"><span class="accent" style="--i:2">vibe.</span></span>
+    </h1>
+    <div class="hero__sub">
+      <p class="lede" data-intro style="--d:2">Gaming zones, turfs, escape rooms, VR, pottery studios and more. One place, two regions, zero doom-scrolling.</p>
+    </div>
+    <div class="search" data-intro style="--d:3">
+      <form id="searchForm" role="search" autocomplete="off">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.500-3.500"/></svg>
+        <label class="vh" for="q">Search experiences</label>
+        <input id="q" name="q" type="search" placeholder="Try “snooker”, “VR” or “Zirakpur”" role="combobox" aria-expanded="false" aria-controls="suggest" aria-autocomplete="list">
+        <button type="submit">Search</button>
+      </form>
+      <div class="suggest" id="suggest" role="listbox"></div>
+    </div>
+    <div class="chips" id="chips" data-intro style="--d:4"></div>
+  </div>
+  <div class="stage" id="stage" data-parallax="0.05">
+    <div class="stage__dots" id="stageDots"></div>
+    <div class="stage__cap" id="stageCap"><div><span></span><b></b></div><a href="explore.html">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+  <div class="orb" data-depth="0.5" aria-hidden="true"><div class="scene" id="orbScene"></div></div>
+  <div class="scroll-cue" aria-hidden="true"><i></i>Scroll</div>
+  <div class="hero__foot" aria-hidden="true"><div class="ticker" id="ticker"></div></div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement">
+  <div class="wrap">
+    <p class="big words">Bored of the same old plans? Pick a place, grab your people and try something you have never done before.</p>
+    <div class="stats" id="stats"></div>
+  </div>
+</section>
+
+<!-- CITIES -->
+<section class="sec" id="cities" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec__head"><div><p class="eyebrow" data-reveal>Choose your city</p><h2 class="h2" data-reveal style="--d:1">Two regions. Pick one.</h2></div>
+      <p class="lede" data-reveal style="--d:2">Every listing is a selected venue from our student research. Coverage is partial, so treat it as a starting point and check before you go.</p></div>
+    <div class="cities" id="cityGrid"></div>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="sec" id="featured" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec__head"><div><p class="eyebrow" data-reveal>Quick picks</p><h2 class="h2" data-reveal style="--d:1">Start with these.</h2></div>
+      <p class="lede" data-reveal style="--d:2">Hand-picked in our original research for specific moods. Artwork is designed category art, not a photo of the venue.</p></div>
+    <div class="rail" id="rail" tabindex="0" aria-label="Featured experiences, scroll sideways"></div>
+    <div class="rail__hint"><span>Drag or scroll sideways</span><a class="btn" href="explore.html">All experiences <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="sec" id="activities" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec__head"><div><p class="eyebrow" data-reveal>Activity types</p><h2 class="h2" data-reveal style="--d:1">What are you in the mood for?</h2></div></div>
+    <div class="catlist" id="catlist"></div>
+  </div>
+  <div class="peek" id="peek" aria-hidden="true"><div class="scene"></div></div>
+</section>
+
+<!-- MOODS -->
+<section class="sec" id="moods-sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec__head"><div><p class="eyebrow" data-reveal>Moods</p><h2 class="h2" data-reveal style="--d:1">Or just pick a feeling.</h2></div>
+      <p class="lede" data-reveal style="--d:2">Moods come from the quick-pick lists in our research. A place only appears under a mood if we put it there.</p></div>
+    <div class="moods" id="moods"></div>
+  </div>
+</section>
+
+<!-- COLLECTIONS -->
+<section class="sec" id="collections" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec__head"><div><p class="eyebrow" data-reveal>Collections</p><h2 class="h2" data-reveal style="--d:1">Curated by what is actually there.</h2></div></div>
+    <div class="colls" id="colls"></div>
+  </div>
+</section>
+
+<!-- NEIGHBOURHOODS -->
+<section class="sec" id="areas" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec__head"><div><p class="eyebrow" data-reveal>Neighbourhoods</p><h2 class="h2" data-reveal style="--d:1">Start from where you are.</h2></div>
+      <p class="lede" data-reveal style="--d:2">The busiest areas in each region. Number = places we have listed.</p></div>
+    <div class="areas">
+      <div><h3 data-reveal>Delhi <span id="areasN-delhi"></span></h3><div class="cloud" id="areas-delhi" data-reveal></div></div>
+      <div><h3 data-reveal>Chandigarh Tricity <span id="areasN-tricity"></span></h3><div class="cloud" id="areas-tricity" data-reveal></div>
+        <p class="areas__note" data-reveal>Some tricity listings only have a town-level location. They are searchable but left out of this area index.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RADAR -->
+<section class="radar" aria-label="Ideas on the radar, not listed yet">
+  <div class="wrap radar__lab">On our radar. Not listed yet, still being researched:</div>
+  <div class="radar__row" id="radarRow" aria-hidden="true"></div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2 class="display" data-split aria-label="Pick a city. Start somewhere.">
+      <span class="ln" aria-hidden="true"><span style="--i:0">Pick a city.</span></span>
+      <span class="ln" aria-hidden="true"><span class="accent" style="--i:1">Start somewhere.</span></span>
+    </h2>
+    <div class="cta__row"><a class="btn btn--solid" href="delhi.html">Explore Delhi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn" href="chandigarh.html">Explore Chandigarh Tricity <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+</main>
+<noscript><p style="padding:2rem;text-align:center">VibeFind needs JavaScript to show its listings. <a href="explore.html" style="color:#C6FF4D">Open Explore</a></p></noscript>
+
+<script src="js/data/config.js" defer></script>
+<script src="js/data/experiences.js" defer></script>
+<script src="js/data/photos.js" defer></script>
+<script src="js/core/utils.js" defer></script>
+<script src="js/core/wishlist.js" defer></script>
+<script src="js/core/store.js" defer></script>
+<script src="js/ui/scenes.js" defer></script>
+<script src="js/ui/cards.js" defer></script>
+<script src="js/ui/nav.js" defer></script>
+<script src="js/motion/reveal.js" defer></script>
+<script src="js/motion/parallax.js" defer></script>
+<script src="js/motion/cursor.js" defer></script>
+<script src="js/motion/transitions.js" defer></script>
+<script src="js/pages/home.js" defer></script>
+</body>
+</html>
